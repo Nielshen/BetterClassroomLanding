@@ -6,8 +6,6 @@ import { Label } from "./components/ui/label"
 import { Textarea } from "./components/ui/textarea"
 import { ChevronRight, Hand, Users, LayoutDashboard } from "lucide-react"
 
-console.log('App.tsx is loading test');
-
 function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -15,10 +13,6 @@ function App() {
   }
 
   return (
-    <>
-    <div id="debug" style={{padding: '20px', background: 'yellow'}}>
-      Debug: App is loading
-    </div>
     <Router basename="/">
       <div className="flex flex-col min-h-screen">
         <header className="px-4 lg:px-6 h-14 flex items-center">
@@ -122,7 +116,6 @@ function App() {
         </footer>
       </div>
     </Router>
-    </>
   )
 }
 
