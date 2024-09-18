@@ -44,6 +44,6 @@
   "homepage": "http://betterclassroom.de",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   }
 }
