@@ -6,6 +6,8 @@ import { Label } from "./components/ui/label"
 import { Textarea } from "./components/ui/textarea"
 import { ChevronRight, Hand, Users, LayoutDashboard } from "lucide-react"
 
+console.log('App.tsx is loading');
+
 function App() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
