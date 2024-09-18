@@ -33,8 +33,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          
+
       - name: List contents of dist directory
         run: |
           echo "Contents of dist directory:"
           ls -R dist
+      - name: Check index.html content
+        run: cat ./dist/index.html
