@@ -41,9 +41,5 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
   },
-  "homepage": "http://betterclassroom.de",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
+  "homepage": "http://betterclassroom.de"
 }
