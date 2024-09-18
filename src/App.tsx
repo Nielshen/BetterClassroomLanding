@@ -19,7 +19,7 @@ function App() {
     <div id="debug" style={{padding: '20px', background: 'yellow'}}>
       Debug: App is loading
     </div>
-    <Router> //basename="/"
+    <Router basename="/">
       <div className="flex flex-col min-h-screen">
         <header className="px-4 lg:px-6 h-14 flex items-center">
           <Link className="flex items-center justify-center" to="#">
