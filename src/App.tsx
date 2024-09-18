@@ -1,4 +1,3 @@
-import React from 'react'
 import { HashRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import { Button } from "./components/ui/button"
 import ImageGallery from './components/ImageGallery';
