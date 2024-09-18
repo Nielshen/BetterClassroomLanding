@@ -24,10 +24,7 @@ jobs:
 
       - name: Build
         run: npm run build
-        
-      - name: Create .nojekyll file
-        run: touch ./dist/.nojekyll
-
+    
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -38,5 +35,6 @@ jobs:
         run: |
           echo "Contents of dist directory:"
           ls -R dist
+          
       - name: Check index.html content
         run: cat ./dist/index.html
