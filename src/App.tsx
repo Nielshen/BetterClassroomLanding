@@ -7,6 +7,14 @@ import Datenschutz from './components/Datenschutz'
 import AGB from './components/AGB'
 
 function App() {
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Router basename="/">
       <div className="flex flex-col min-h-screen">
@@ -16,10 +24,19 @@ function App() {
             <span className="sr-only">ClassroomTech</span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link className="text-sm font-medium hover:underline underline-offset-4" to="/#features">
+            <Link 
+              className="text-sm font-medium hover:underline underline-offset-4" 
+              to="/"
+              onClick={() => scrollToSection('features')}
+            >
               Funktionen
             </Link>
-            <Link className="text-sm font-medium hover:underline underline-offset-4" to="/#contact">
+
+            <Link 
+              className="text-sm font-medium hover:underline underline-offset-4" 
+              to="/"
+              onClick={() => scrollToSection('contact')}
+            >
               Kontakt
             </Link>
           </nav>
@@ -33,7 +50,7 @@ function App() {
           </Routes>
         </main>
         <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2023 ClassroomTech. Alle Rechte vorbehalten.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">2024 BetterClassroom</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link className="text-xs hover:underline underline-offset-4" to="/datenschutz">
               Datenschutz
@@ -55,10 +72,16 @@ function App() {
 }
 
 function HomePage() {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
       <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 mx-auto max-w-7xl">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -69,18 +92,22 @@ function HomePage() {
               </p>
             </div>
             <div className="space-x-4">
-              <Button className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-                <a href="#contact">Demo anfordern</a>
+              <Button 
+                className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                onClick={() => scrollToSection('contact')}
+              >
+                Demo anfordern
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
         </div>
       </section>
-      <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div className="container px-4 md:px-6">
+      <section id="features" className="full-width-container w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <div className="content-container">
+        <div className="container px-4 md:px-6 mx-auto max-w-7xl">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Unsere Funktionen</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center">
               <Hand className="h-12 w-12 mb-4 text-primary" />
               <h3 className="text-xl font-bold mb-2">Digitale Meldungen</h3>
@@ -98,14 +125,28 @@ function HomePage() {
             </div>
           </div>
         </div>
+        </div>
       </section>
+      
+      <section id="features" className="full-width-container w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+
       <ImageGallery />
-      <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">Kontaktieren Sie uns</h2>
-          <div className="max-w-md mx-auto text-center">
-            <p className="mb-4">Für Anfragen oder weitere Informationen kontaktieren Sie uns bitte unter:</p>
-            <a href="mailto:info@betterclassroom.de" className="text-primary hover:underline">info@betterclassroom.de</a>
+      </section>
+
+      <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+        <div className="container px-4 md:px-6 mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">Bereit für die digitale Klassenzimmer Revolution?</h2>
+          <p className="text-xl text-center mb-8">Erleben Sie BetterClassroom in Aktion. Fordern Sie jetzt Ihre persönliche Demo an!</p>
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <a
+              href="mailto:info@betterclassroom.de"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out"
+            >
+              Demo anfordern
+            </a>
+            <p className="text-lg">
+              <a href="mailto:info@betterclassroom.de" className="text-blue-600 hover:underline">info@betterclassroom.de</a>
+            </p>
           </div>
         </div>
       </section>

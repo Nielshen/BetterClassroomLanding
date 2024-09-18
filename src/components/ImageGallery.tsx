@@ -67,7 +67,7 @@ const ImageGallery = () => {
                   src={images[currentIndex].professor}
                   alt={`Lehrenden-Ansicht ${currentIndex + 1}`}
                   className="w-full h-auto object-cover"
-                  style={{ maxWidth: '100%', maxHeight: '320px' }}
+                  style={{ maxWidth: '100%', maxHeight: '300px' }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <p className="text-xs mt-1 text-gray-200">{images[currentIndex].profDescription}</p>
@@ -86,7 +86,7 @@ const ImageGallery = () => {
                   src={images[currentIndex].student}
                   alt={`Lernenden-Ansicht ${currentIndex + 1}`}
                   className="w-full h-auto object-cover"
-                  style={{ maxWidth: '100%', maxHeight: '320px' }}
+                  style={{ maxWidth: '100%', maxHeight: '300px' }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <p className="text-xs mt-1 text-gray-200">{images[currentIndex].studentDescription}</p>
