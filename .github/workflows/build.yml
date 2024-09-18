@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     permissions:
-      contents: write
+        contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,14 +27,8 @@ jobs:
         run: npm run build
         working-directory: ./betterclassroom
 
-      - name: Debug - List dist contents
-        run: ls -R ./betterclassroom/dist
-
       - name: Create .nojekyll file
         run: touch ./betterclassroom/dist/.nojekyll
-
-      - name: Copy index.html to 404.html
-        run: cp ./betterclassroom/dist/index.html ./betterclassroom/dist/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
